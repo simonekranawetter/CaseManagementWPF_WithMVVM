@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" Background="Aquamarine">
+            <RadioButton Content="Overview" FontSize="14" IsChecked="True" Style="{StaticResource MenuItemTemplate}" Command="{Binding OverviewViewCommand}"/>
+            <RadioButton Content="New Customer" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding NewCustomerViewCommand}"/>
+            <RadioButton Content="New Case" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding NewCaseViewCommand}"/>
+            <RadioButton Content="Customers" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding CustomersViewCommand}"/>
+            <RadioButton Content="Cases" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding CasesViewCommand}"/>
+            <RadioButton Content="Case Details" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding CaseDetailsViewCommand}"/>
+        </StackPanel>
+        <ContentControl Grid.Column="1" Margin="10" Content="{Binding CurrentView}" />
     </Grid>
 </Window>

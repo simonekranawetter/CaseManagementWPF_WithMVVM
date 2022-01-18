@@ -2,8 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModel="clr-namespace:CaseManagementWPF_WithMVVM.ViewModels"
+             xmlns:view="clr-namespace:CaseManagementWPF_WithMVVM.Views">
+    
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/MenuItemTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
