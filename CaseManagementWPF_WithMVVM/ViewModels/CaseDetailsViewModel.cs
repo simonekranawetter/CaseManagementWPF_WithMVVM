@@ -22,34 +22,25 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
 
         private CaseStatus _status;
 
+        public CaseDetailsViewModel()
+        {
+            //work on this!
+        }
         public CaseStatus Status
         {
             get { return _status; }
-            set { _status = value; OnPropertyChanged(); }
-        }
-
-        public ICommand SaveCaseCommand { get; set; }
-
-        public CaseDetailsViewModel(CaseViewModel caseViewModel)
-        {
-            Id = caseViewModel.Id;
-            Customer = caseViewModel.Customer;
-            Headline = caseViewModel.Headline;
-            Description = caseViewModel.Description;
-            CaseHandler = caseViewModel.CaseHandler;
-            Created = caseViewModel.Created;
-            Updated = caseViewModel.Updated;
-            Status = caseViewModel.Status;
-
-            SaveCaseCommand = new RelayCommand((p) =>
-            {
-                using (var context = new SqlContext())
+            set 
+            { 
+                _status = value; 
+                using(var context = new SqlContext())
                 {
-                    var myCase = context.Cases.Where(c => c.Id == Id).FirstOrDefault();
-                    myCase.Status = Status;
+                    var myCase = context.Cases
+                        .Where(c => c.Id == Id)
+                        .First();
+                    myCase.Status = _status;
                     context.SaveChanges();
                 }
-            });
+            }
         }
 
     }

@@ -30,10 +30,10 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
             {
                 CurrentView = new CasesViewModel();
             });
-            //GoToDetailedCaseViewCommand = new RelayCommand((p) =>
-            //{
-            //    CurrentView = new CaseDetailsViewModel();
-            //});
+            GoToDetailedCaseViewCommand = new RelayCommand((p) =>
+            {
+                CurrentView = new CaseDetailsViewModel();
+            });
             GoToOverviewViewCommand = new RelayCommand((p) =>
             {
                 CurrentView = new OverviewViewModel();

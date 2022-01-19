@@ -18,7 +18,7 @@
             <RadioButton Content="New Case" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding GoToCreateCaseViewCommand}"/>
             <RadioButton Content="Customers" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding GoToCustomersViewCommand}"/>
             <RadioButton Content="Cases" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding GoToCasesViewCommand}"/>
-            <RadioButton Content="Case Details" FontSize="14" Style="{StaticResource MenuItemTemplate}"/>
+            <RadioButton Content="Case Details" FontSize="14" Style="{StaticResource MenuItemTemplate}" Command="{Binding GoToDetailedCaseViewCommand}"/>
         </StackPanel>
         <ContentControl Grid.Column="1" Margin="10" Content="{Binding CurrentView}" />
     </Grid>
