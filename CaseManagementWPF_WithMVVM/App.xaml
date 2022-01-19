@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM"
              xmlns:viewModel="clr-namespace:CaseManagementWPF_WithMVVM.ViewModels"
-             xmlns:view="clr-namespace:CaseManagementWPF_WithMVVM.Views"
-             StartupUri="MainWindow.xaml">
+             xmlns:view="clr-namespace:CaseManagementWPF_WithMVVM.Views">
     
     <Application.Resources>
         <ResourceDictionary>

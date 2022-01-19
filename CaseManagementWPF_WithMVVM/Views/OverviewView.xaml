@@ -7,7 +7,7 @@
              xmlns:view="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              xmlns:viewModel="clr-namespace:CaseManagementWPF_WithMVVM.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -46,16 +46,14 @@
                 <TextBlock Grid.Column="5" Grid.Row="1" Text="Name" FontWeight="Medium"/>
 
 
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Id}" />
+                <!--<TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Id}" />
                 <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Headline}" />
                 <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Description}" />
                 <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding Customer.Email}" />
-                <TextBlock Grid.Column="5" Grid.Row="2" Text="{Binding Customer.Name}" />
+                <TextBlock Grid.Column="5" Grid.Row="2" Text="{Binding Customer.Name}" />-->
             </Grid>
         </StackPanel>
-
-
-        <ListView x:Name="lvCases" DataContext="CaseManagementWPF.Models.Customer" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+        <ListView ItemsSource="{Binding Cases}" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -71,11 +69,13 @@
                         <TextBlock Grid.Column="1" Text="{Binding Headline}" />
                         <TextBlock Grid.Column="2" Text="{Binding Status}" />
                         <TextBlock Grid.Column="3" Text="{Binding Description}" />
-                        <TextBlock Grid.Column="4" Text="{Binding Customer.DisplayName}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Customer.Name}" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+
         <StackPanel Grid.Row="2">
             <Grid Margin="7">
                 <Grid.ColumnDefinitions>

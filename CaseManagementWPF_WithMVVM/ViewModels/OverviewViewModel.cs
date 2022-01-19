@@ -26,7 +26,7 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
 
                 Cases = context.Cases
                     .Include(c => c.Customer)
-                    .OrderBy(c =>c.Created)
+                    .OrderBy(c => c.Created)
                     .Select(c => new CaseViewModel(c))
                     .Take(10)
                     .ToList();

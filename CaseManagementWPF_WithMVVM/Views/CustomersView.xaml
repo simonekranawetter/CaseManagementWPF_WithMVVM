@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -40,7 +40,7 @@
         </StackPanel>
 
 
-        <ListView x:Name="lvCustomers" DataContext="CaseManagementWPF.Models.Customer" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+        <ListView x:Name="lvCustomers" ItemsSource="{Binding Customers}" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -53,7 +53,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0" Text="{Binding Id}"  />
-                        <TextBlock Grid.Column="1" Text="{Binding DisplayName}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" />
                         <TextBlock Grid.Column="2" Text="{Binding Mobile}" />
                         <TextBlock Grid.Column="3" Text="{Binding Email}" />
                         <TextBlock Grid.Column="4" Text="{Binding City}" />

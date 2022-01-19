@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -45,8 +45,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 10">
-            <Label Content="Street Adress"/>
-            <TextBox Text="{Binding Adress}" Padding="5" Margin="0 3 0 10"/>
+            <Label Content="Street Address"/>
+            <TextBox Text="{Binding Address}" Padding="5" Margin="0 3 0 10"/>
 
             <Label Content="Zipcode"/>
             <TextBox Text="{Binding ZipCode}" Padding="5" Margin="0 3 0 10"/>

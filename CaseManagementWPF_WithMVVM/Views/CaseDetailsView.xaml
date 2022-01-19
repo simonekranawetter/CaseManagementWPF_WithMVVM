@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              xmlns:model="clr-namespace:CaseManagementWPF_WithMVVM.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <UserControl.Resources>
         <ObjectDataProvider x:Key="statusFromEnum" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
@@ -38,10 +38,10 @@
             Text="Detailed Case Description"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 10">
             <Label Content="Pick a case" />
-            <ComboBox Text="{Binding Id}" Padding="5" Margin="0 3 0 5"/>
+            <ComboBox ItemsSource="{Binding Cases}" SelectedValue="{Binding SelectedCase}" Padding="5" Margin="0 3 0 5"/>
 
             <Label Content="Case Description" />
-            <TextBlock Text="{Binding Description}" Padding="5" Margin="0 3 0 5" Height="220"/>
+            <TextBlock Text="{Binding SelectedCase.Description}" Padding="5" Margin="0 3 0 5" Height="220"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 10">
             <Label Content="Customer"/>
@@ -51,7 +51,7 @@
             <TextBlock Text="{Binding CustomerHandler}" Padding="5" Margin="0 3 0 5"/>
 
             <Label Content="Case Status"/>
-            <!--<ComboBox ItemSource="{Binding Source={StaticResource statusFromEnum}}" SelectedValue="{Binding Status}" Padding="5" Margin="0 3 0 5"/>-->
+            <ComboBox ItemsSource="{Binding Source={StaticResource statusFromEnum}}" SelectedValue="{Binding Status}" Padding="5" Margin="0 3 0 5"/>
 
             <Label Content="Case Created" />
             <DatePicker SelectedDate="{Binding Created}" Padding="5" Margin="0 3 0 5"/>
