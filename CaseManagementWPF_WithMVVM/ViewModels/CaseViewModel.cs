@@ -15,6 +15,7 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
         public int Id { get; set; }
         public string Headline { get; set; }
         public string Description { get; set; }
+        public string CaseHandler { get; set; }
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
         public CaseStatus Status { get; set; }
@@ -27,18 +28,19 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
             Id = myCase.Id;
             Headline = myCase.Headline;
             Description = myCase.Description;
+            CaseHandler = myCase.CaseHandler;
             Created = myCase.Created;
             Updated = myCase.Updated;
             Status = myCase.Status;
             Customer = new CustomerViewModel(myCase.Customer);
 
-            ViewDetailsCommand = new RelayCommand((p) =>
-            {
-                var detailsWindow = new CaseDetailsView();
-                var caseDetailsViewModel = new CaseDetailsViewModel(this);
-                detailsWindow.Datacontext = caseDetailsViewModel;
-                detailsWindow.ShowDialog();
-            });
+            //ViewDetailsCommand = new RelayCommand((p) =>
+            //{
+            //    var detailsWindow = new CaseDetailsView();
+            //    var caseDetailsViewModel = new CaseDetailsViewModel(this);
+            //    detailsWindow.Datacontext = caseDetailsViewModel;
+            //    detailsWindow.ShowDialog();
+            //});
         }
     }
 }

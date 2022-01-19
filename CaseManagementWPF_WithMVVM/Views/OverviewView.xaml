@@ -7,7 +7,95 @@
              xmlns:view="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              xmlns:viewModel="clr-namespace:CaseManagementWPF_WithMVVM.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="350" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.ColumnSpan="2" Text="Overview" FontSize="18" FontWeight="Medium" HorizontalAlignment="Center" Margin="7" VerticalAlignment="Center"  />
+            </Grid>
+
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="#" FontWeight="Medium" />
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Headline" FontWeight="Medium" />
+                <TextBlock Grid.Column="2" Grid.Row="1" Text="Description" FontWeight="Medium" />
+                <TextBlock Grid.Column="3" Grid.Row="1" Text="Email" FontWeight="Medium"/>
+                <TextBlock Grid.Column="5" Grid.Row="1" Text="Name" FontWeight="Medium"/>
+
+
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Id}" />
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Headline}" />
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Description}" />
+                <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding Customer.Email}" />
+                <TextBlock Grid.Column="5" Grid.Row="2" Text="{Binding Customer.Name}" />
+            </Grid>
+        </StackPanel>
+
+
+        <ListView x:Name="lvCases" DataContext="CaseManagementWPF.Models.Customer" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}"  />
+                        <TextBlock Grid.Column="1" Text="{Binding Headline}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Status}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Description}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Customer.DisplayName}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="2">
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Text="Status" FontWeight="Heavy" />
+                <TextBlock Grid.Column="1" Text="Pending Cases" FontWeight="Medium" />
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Pending}" />
+                <TextBlock Grid.Column="2" Text="Ongoing Cases" FontWeight="Medium" />
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Ongoing}" />
+                <TextBlock Grid.Column="3" Text="Closed Cases" FontWeight="Medium" />
+                <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding Closed}" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

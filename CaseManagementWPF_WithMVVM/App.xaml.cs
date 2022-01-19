@@ -17,20 +17,14 @@ namespace CaseManagementWPF_WithMVVM
     /// </summary>
     public partial class App : Application
     {
-    protected override void OnStartup(StartupEventArgs e)
-        {
-#if DEBUG 
-        using(var context = new SqlContext())
-        {
-            context.Database.Migrate();
-        }
-#endif
+    //protected override void OnStartup(StartupEventArgs e)
+    //    {
 
-            var overviewViewModel = new OverviewViewModel();
-            var overviewView = new OverviewView();
-           // overviewView.Show();
+    //        var overviewViewModel = new OverviewViewModel();
+    //        var overviewView = new OverviewView();
+    //       // overviewView.Show();
 
-            base.OnStartup(e);
-        }
+    //        base.OnStartup(e);
+    //    }
     }
 }

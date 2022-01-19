@@ -5,8 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.ColumnSpan="2" Text="Customer List" FontSize="18" FontWeight="Medium" HorizontalAlignment="Center" Margin="7" VerticalAlignment="Center"  />
+            </Grid>
+
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="#" FontWeight="Medium" />
+                <TextBlock Grid.Column="1" Text="Customer" FontWeight="Medium" />
+                <TextBlock Grid.Column="2" Text="Mobile" FontWeight="Medium" />
+                <TextBlock Grid.Column="3" Text="Email" FontWeight="Medium"/>
+                <TextBlock Grid.Column="5" Text="City" FontWeight="Medium"/>
+            </Grid>
+        </StackPanel>
+
+
+        <ListView x:Name="lvCustomers" DataContext="CaseManagementWPF.Models.Customer" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}"  />
+                        <TextBlock Grid.Column="1" Text="{Binding DisplayName}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Mobile}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Email}" />
+                        <TextBlock Grid.Column="4" Text="{Binding City}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

@@ -5,8 +5,62 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CaseManagementWPF_WithMVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            Margin="20 10"
+            FontWeight="Medium"
+            FontSize="18"
+            Text="Add New Customer"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 10">
+            <Label Content="First Name" />
+            <TextBox Text="{Binding FirstName}" Padding="5" Margin="0 3 0 5"/>
+
+            <Label Content="Last Name" />
+            <TextBox Text="{Binding LastName}" Padding="5" Margin="0 3 0 5"/>
+
+            <Label Content="Email" />
+            <TextBox Text="{Binding Email}" Padding="5" Margin="0 3 0 5"/>
+
+            <Label Content="Phone Number"/>
+            <TextBox Text="{Binding Phone}" Padding="5" Margin="0 3 0 5"/>
+
+            <Label Content="Mobile"/>
+            <TextBox Text="{Binding Mobile}" Padding="5" Margin="0 3 0 5"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 10">
+            <Label Content="Street Adress"/>
+            <TextBox Text="{Binding Adress}" Padding="5" Margin="0 3 0 10"/>
+
+            <Label Content="Zipcode"/>
+            <TextBox Text="{Binding ZipCode}" Padding="5" Margin="0 3 0 10"/>
+
+            <Label Content="City"/>
+            <TextBox Text="{Binding City}" Padding="5" Margin="0 3 0 10"/>
+
+            <Label Content="Country"/>
+            <TextBox Text="{Binding Country}" Padding="5" Margin="0 3 0 5"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="20 0 20 10">
+            <Button Command="{Binding SaveCustomerCommand}" FontSize="14" Content="Create Customer" Margin="0 20 0 0" Padding="0 10" />
+            <Label Foreground="Red" FontSize="14" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" />
+        </StackPanel>
     </Grid>
 </UserControl>

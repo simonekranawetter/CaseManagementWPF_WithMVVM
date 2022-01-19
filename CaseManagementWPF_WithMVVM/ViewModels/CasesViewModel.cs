@@ -1,5 +1,6 @@
 ﻿using CaseManagementWPF_WithMVVM.Data;
 using CaseManagementWPF_WithMVVM.Commands;
+using Microsoft.EntityFrameworkCore;
 using CaseManagementWPF_WithMVVM.Models;
 using System;
 using System.Collections.Generic;

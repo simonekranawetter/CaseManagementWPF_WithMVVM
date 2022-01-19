@@ -30,7 +30,7 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
 
         public ICommand SaveCaseCommand { get; set; }
 
-        public CaseDetailsViewModel(CaseViewModel caseViewModel)
+        public CaseDetailsViewModel(CaseViewModel caseViewModel, object caseViewModel1)
         {
             Id = caseViewModel.Id;
             Customer = caseViewModel.Customer;
