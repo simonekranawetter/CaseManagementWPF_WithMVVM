@@ -36,5 +36,8 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
                 }
             }
         }
+        public CaseDetailsViewModel()
+        {
+        }
     }
   }
