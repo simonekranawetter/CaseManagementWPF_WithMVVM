@@ -1,27 +1,17 @@
-﻿using CaseManagementWPF_WithMVVM.Commands;
-using CaseManagementWPF_WithMVVM.Data;
+﻿using CaseManagementWPF_WithMVVM.Data;
 using CaseManagementWPF_WithMVVM.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace CaseManagementWPF_WithMVVM.ViewModels
 {
     internal class CaseDetailsViewModel : ObservableObject
     {
-        //List<CaseViewModel> Cases { get; set; }
-        private CaseViewModel _selectedCase;
-        public CaseViewModel SelectedCase
-        {
-            get { return _selectedCase; }
-            set { _selectedCase = value; OnPropertyChanged(); }
-        }
-        public int Id { get; set; }
+        public List<CaseViewModel> Cases { get; set; }
+        public CaseViewModel SelectedCase { get; set; }
         public CustomerViewModel Customer { get; set; }
+        public int Id { get; set; }
         public string Headline { get; set; }
         public string Description { get; set; }
         public string CaseHandler { get; set; }
@@ -46,6 +36,5 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
                 }
             }
         }
-
     }
   }

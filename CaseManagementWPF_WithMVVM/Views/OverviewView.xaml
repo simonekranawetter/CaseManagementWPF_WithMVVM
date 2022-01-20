@@ -41,16 +41,10 @@
                 
                 <TextBlock Grid.Column="0" Grid.Row="1" Text="#" FontWeight="Medium" />
                 <TextBlock Grid.Column="1" Grid.Row="1" Text="Headline" FontWeight="Medium" />
-                <TextBlock Grid.Column="2" Grid.Row="1" Text="Description" FontWeight="Medium" />
-                <TextBlock Grid.Column="3" Grid.Row="1" Text="Email" FontWeight="Medium"/>
-                <TextBlock Grid.Column="5" Grid.Row="1" Text="Name" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="1" Text="Status" FontWeight="Medium" />
+                <TextBlock Grid.Column="3" Grid.Row="1" Text="Description" FontWeight="Medium"/>
+                <TextBlock Grid.Column="5" Grid.Row="1" Text="Customer" FontWeight="Medium"/>
 
-
-                <!--<TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Id}" />
-                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Headline}" />
-                <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Description}" />
-                <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding Customer.Email}" />
-                <TextBlock Grid.Column="5" Grid.Row="2" Text="{Binding Customer.Name}" />-->
             </Grid>
         </StackPanel>
         <ListView ItemsSource="{Binding Cases}" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">

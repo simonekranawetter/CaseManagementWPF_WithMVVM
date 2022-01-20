@@ -17,7 +17,7 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
         public CustomerViewModel(Customer customer)
         {
             Id = customer.Id;
-            Name = $"{customer.FirstName}{customer.LastName}";
+            Name = $"{customer.FirstName} {customer.LastName}";
             Email = customer.Email;
             Phone = customer.Phone;
             Mobile = customer.Mobile;
