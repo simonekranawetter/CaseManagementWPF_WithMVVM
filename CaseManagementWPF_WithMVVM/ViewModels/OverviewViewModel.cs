@@ -1,11 +1,8 @@
 ﻿using CaseManagementWPF_WithMVVM.Data;
 using CaseManagementWPF_WithMVVM.Models;
-using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaseManagementWPF_WithMVVM.ViewModels
 {

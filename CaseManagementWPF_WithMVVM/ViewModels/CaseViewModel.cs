@@ -34,13 +34,6 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
             Status = myCase.Status;
             Customer = new CustomerViewModel(myCase.Customer);
 
-            //ViewDetailsCommand = new RelayCommand((p) =>
-            //{
-            //    var detailsWindow = new CaseDetailsView();
-            //    var caseDetailsViewModel = new CaseDetailsViewModel(this);
-            //    detailsWindow.Datacontext = caseDetailsViewModel;
-            //    detailsWindow.ShowDialog();
-            //});
         }
     }
 }
