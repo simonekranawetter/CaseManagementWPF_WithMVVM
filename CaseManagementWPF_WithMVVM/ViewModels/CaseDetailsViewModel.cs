@@ -43,6 +43,7 @@ namespace CaseManagementWPF_WithMVVM.ViewModels
         }
         public CaseDetailsViewModel()
         {
+            //Insert black magic here. 
         }
     }
   }
