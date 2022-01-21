@@ -12,39 +12,39 @@ namespace CaseManagementWPF_WithMVVM.Models
 
         [Required]
         [StringLength(50)]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Mobile { get; set; }
+        public string? Mobile { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Required]
         [StringLength(10)]
-        public string ZipCode { get; set; }
+        public string? ZipCode { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
     }
 }

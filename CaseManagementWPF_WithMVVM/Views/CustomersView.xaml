@@ -28,14 +28,14 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1.5*" />
-                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.75*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Text="#" FontWeight="Medium" />
                 <TextBlock Grid.Column="1" Text="Customer" FontWeight="Medium" />
                 <TextBlock Grid.Column="2" Text="Mobile" FontWeight="Medium" />
                 <TextBlock Grid.Column="3" Text="Email" FontWeight="Medium"/>
-                <TextBlock Grid.Column="5" Text="City" FontWeight="Medium"/>
+                <TextBlock Grid.Column="5" Text="Address" FontWeight="Medium"/>
             </Grid>
         </StackPanel>
 
@@ -49,14 +49,14 @@
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1.5*" />
-                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.75*" />
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0" Text="{Binding Id}"  />
                         <TextBlock Grid.Column="1" Text="{Binding Name}" />
                         <TextBlock Grid.Column="2" Text="{Binding Mobile}" />
                         <TextBlock Grid.Column="3" Text="{Binding Email}" />
-                        <TextBlock Grid.Column="4" Text="{Binding City}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Address}" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

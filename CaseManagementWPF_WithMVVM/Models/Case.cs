@@ -12,15 +12,15 @@ namespace CaseManagementWPF_WithMVVM.Models
 
         [Required]
         [StringLength(50)]
-        public string Headline { get; set; }
+        public string? Headline { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string CaseHandler { get; set; }
+        public string? CaseHandler { get; set; }
 
         [Required]
         public DateTime Created { get; set; }
@@ -33,7 +33,7 @@ namespace CaseManagementWPF_WithMVVM.Models
 
         [Required]
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public Customer Customer { get; set; } = null!;
     }
 
     internal enum CaseStatus
