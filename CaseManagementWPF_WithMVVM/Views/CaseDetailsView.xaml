@@ -19,6 +19,7 @@
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -64,8 +65,8 @@
             <Label Content="Case Updated" FontWeight="Medium"/>
             <TextBlock Text ="{Binding SelectedCase.Updated}" Padding="5" Margin="0 3 0 5"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="20 20 20 10">
-            <Label  Foreground="Red" FontSize="14" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" />
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="20 20 20 10">
+            <Label Content="If status changes, case is updated automatically"  Foreground="MediumTurquoise" FontSize="14" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" />
         </StackPanel>
 
     </Grid>
