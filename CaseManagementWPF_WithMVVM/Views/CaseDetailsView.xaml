@@ -36,27 +36,33 @@
             FontSize="18"
             Text="Detailed Case Description"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 10">
-            <Label Content="Pick a case" />
-            <ComboBox ItemsSource="{Binding Cases}" SelectedValue="{Binding SelectedCase}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Pick a case" FontWeight="Medium" />
+            <ComboBox ItemsSource="{Binding Cases}" SelectedValue="{Binding SelectedCase}" Padding="5" Margin="0 3 0 5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Headline}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
-            <Label Content="Case Description" />
+            <Label Content="Case Description" FontWeight="Medium" />
             <TextBlock Text="{Binding SelectedCase.Description}" Padding="5" Margin="0 3 0 5" Height="220"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 10">
-            <Label Content="Customer"/>
-            <TextBlock Text="{Binding SelectedCase.Customer}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Customer" FontWeight="Medium"/>
+            <TextBlock Text="{Binding SelectedCase.Customer.Name}" Padding="5" Margin="0 3 0 5"/>
 
-            <Label Content="Customer Service Representative"/>
-            <TextBlock Text="{Binding SelectedCase.CustomerHandler}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Customer Service Representative" FontWeight="Medium"/>
+            <TextBlock Text="{Binding SelectedCase.CaseHandler}" Padding="5" Margin="0 3 0 5"/>
 
-            <Label Content="Case Status"/>
-            <ComboBox ItemsSource="{Binding Source={StaticResource statusFromEnum}}" SelectedValue="{Binding Status}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Case Status" FontWeight="Medium"/>
+            <ComboBox ItemsSource="{Binding Source={StaticResource statusFromEnum}}" SelectedValue="{Binding SelectedCase.Status}" Padding="5" Margin="0 3 0 5"/>
 
-            <Label Content="Case Created" />
-            <DatePicker SelectedDate="{Binding SelectedCase.Created}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Case Created" FontWeight="Medium" />
+            <TextBlock Text="{Binding SelectedCase.Created}" Padding="5" Margin="0 3 0 5"/>
 
-            <Label Content="Case Updated"/>
-            <DatePicker SelectedDate ="{Binding SelectedCase.Updated}" Padding="5" Margin="0 3 0 5"/>
+            <Label Content="Case Updated" FontWeight="Medium"/>
+            <TextBlock Text ="{Binding SelectedCase.Updated}" Padding="5" Margin="0 3 0 5"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="20 20 20 10">
             <Label  Foreground="Red" FontSize="14" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" />
